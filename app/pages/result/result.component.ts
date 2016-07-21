@@ -58,8 +58,18 @@ export class ResultComponent implements OnInit {
     }
 
     capturePicture() {
+        if(this.showPicture) {
+            this.backToHome();
+        } else {
+            CameraModule.takePicture({width: 240, height: 480, keepAspectRatio: true}).then(picture => {
+                let image = <Image>this.imageContainer.nativeElement;
+                image.imageSource = picture;
+                this.showPicture = true;
+            });
+        }
     }
 
     private backToHome() {
+        this._router.navigate(["/"]);
     }
 }
