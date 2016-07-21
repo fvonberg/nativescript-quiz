@@ -49,6 +49,12 @@ export class ResultComponent implements OnInit {
     }
 
     startAnimation() {
+        let animateStarContainer = <View>this.starContainer.nativeElement;
+        animateStarContainer.animate({
+            translate: {x: 0, y: 250},
+            duration: 1500,
+            curve: AnimationCurve.spring
+        });
     }
 
     capturePicture() {
