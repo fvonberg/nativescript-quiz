@@ -1,21 +1,19 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {Page} from "ui/page";
 
 @Component({
     selector: "my-app",
     templateUrl: "app.component.html",
 })
-export class AppComponent {
-    public counter: number = 16;
+export class AppComponent implements OnInit {
 
-    public get message(): string {
-        if (this.counter > 0) {
-            return this.counter + " taps left";
-        } else {
-            return "Hoorraaay! \nYou are ready to start building!";
-        }
+    constructor(public page: Page) {}
+
+    public ngOnInit() {
+        this.page.actionBarHidden = true;
     }
-    
-    public onTap() {
-        this.counter--;
+
+    public startGame() {
+        console.log("start game");
     }
 }
