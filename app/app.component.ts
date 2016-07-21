@@ -1,19 +1,10 @@
-import {Component, OnInit} from "@angular/core";
-import {Page} from "ui/page";
+import {Component} from "@angular/core";
+import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router";
 
 @Component({
     selector: "my-app",
-    templateUrl: "app.component.html",
+    directives: [NS_ROUTER_DIRECTIVES],
+    template: "<page-router-outlet></page-router-outlet>",
 })
-export class AppComponent implements OnInit {
-
-    constructor(public page: Page) {}
-
-    public ngOnInit() {
-        this.page.actionBarHidden = true;
-    }
-
-    public startGame() {
-        console.log("start game");
-    }
+export class AppComponent {
 }

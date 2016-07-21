@@ -12,5 +12,14 @@ import {AnimationDefinition} from "ui/animation";
     templateUrl: "home.html",
     styleUrls: ["home-common.css", "home.css"]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+    constructor(private page: Page) {}
+
+    public ngOnInit() {
+        this.page.actionBarHidden = true;
+    }
+
+    public startGame() {
+        console.log("start game");
+    }
 }

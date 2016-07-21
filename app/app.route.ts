@@ -1,8 +1,8 @@
 import {RouterConfig} from "@angular/router";
-import {HomeComponent} from "../../Quiz/app/pages/home/home.component";
 import {nsProvideRouter} from "nativescript-angular/router";
-import {GameComponent} from "../../Quiz/app/pages/game/game.component";
-import {ResultComponent} from "../../Quiz/app/pages/result/result.component";
+import {HomeComponent} from "./pages/home/home.component";
+import {GameComponent} from "./pages/game/game.component";
+import {ResultComponent} from "./pages/result/result.component";
 
 export const routes: RouterConfig = [
     { path: "", component: HomeComponent },
