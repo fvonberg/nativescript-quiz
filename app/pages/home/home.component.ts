@@ -13,13 +13,13 @@ import {AnimationDefinition} from "ui/animation";
     styleUrls: ["home-common.css", "home.css"]
 })
 export class HomeComponent implements OnInit {
-    constructor(private page: Page) {}
+    constructor(private page: Page, private _router: Router) {}
 
     public ngOnInit() {
         this.page.actionBarHidden = true;
     }
 
     public startGame() {
-        console.log("start game");
+        this._router.navigate(["/game"]);
     }
 }
