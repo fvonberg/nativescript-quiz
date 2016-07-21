@@ -44,10 +44,24 @@ export class GameComponent implements OnInit {
         if(!this.answerSelectedByUser) {
             this.selectedAnswer = answerNumber;
             this.answerSelectedByUser = true;
+            Observable.interval(5000).take(1).subscribe(x => {
+               this.nextQuestion();
+            });
         }
     }
 
     private nextQuestion() {
+
+        if(this.selectedAnswer == this.actualQuestion.correctAnswer) {
+            this.questionService.incrementCorrectAnswers();
+        }
+
+        if(this.questionService.isThereANextQuestion()) {
+            this.answerSelectedByUser = false;
+            this.actualQuestion = this.questionService.getNextQuestion();
+        } else {
+            this._router.navigate(["/result", this.questionService.getCorrectAnswers()]);
+        }
 
     }
 }
