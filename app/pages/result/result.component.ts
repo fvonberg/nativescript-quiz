@@ -34,6 +34,18 @@ export class ResultComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.page.actionBarHidden = true;
+
+        this._route.params.subscribe(params => {
+            let correctAnswer = +params["correctAnswers"];
+            let percent = (correctAnswer / this.questionService.getQuestionCount()) * 100;
+            this.scoreLabel = percent + "% Richtig";
+        });
+
+        // Hack until ng-animate is working
+        Observable.interval(100).take(1).subscribe(x => {
+            this.startAnimation();
+        });
     }
 
     startAnimation() {

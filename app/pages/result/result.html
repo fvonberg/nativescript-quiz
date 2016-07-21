@@ -1,0 +1,13 @@
+<ScrollView>
+    <StackLayout>
+        <StackLayout #container orientation="horizontal" class="font-awesome stars" horizontalAlignment="center">
+            <Label *ngFor="let star of [0,1,2]" text="&#xf005;" class="star star-{{star}}"></Label>
+        </StackLayout>
+        <StackLayout class="resultText" orientation="horizontal" horizontalAlignment="center">
+            <Label text="Ergebnis:" class="label"></Label>
+            <Label [text]="scoreLabel" class="label"></Label>
+        </StackLayout>
+        <Button [text]="showPicture ? 'zurück zum Start' : 'Siegerfoto'" (tap)="capturePicture()" class="backButton"></Button>
+        <Image #image [visibility]="showPicture ? 'visible' : 'collapse'" class="image"></Image>
+    </StackLayout>
+</ScrollView>
