@@ -1,0 +1,14 @@
+StackLayout {
+    height: 200;
+}
+
+.heading {
+    font-size: 36;
+    color: white;
+    text-align: center;
+}
+
+.startButton {
+    width: 260;
+    margin-top: 20;
+}

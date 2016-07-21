@@ -1,0 +1,33 @@
+.question {
+    background-color: #5a5a5a;
+    margin: 10;
+    border-radius: 25;
+    text-align: center;
+    padding: 30;
+}
+
+.answer {
+    margin: 10;
+    border-radius: 25;
+    text-align: center;
+    padding: 30;
+    editable: false;
+}
+
+.unselected {
+    background-color: #9C9C9C;
+}
+
+.wrong {
+    background-color: #de0000;
+}
+
+.correct {
+    background-color: #00d100;
+}
+
+.countdown {
+    text-align: center;
+    font-size: 24;
+    color: #FFD700;
+}

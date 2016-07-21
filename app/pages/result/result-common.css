@@ -1,0 +1,36 @@
+.stars {
+    text-align: center;
+    margin-top: -100;
+    height: 300;
+    margin-bottom: 50;
+}
+
+.star {
+    color: #ffd700;
+    margin: 20;
+    font-size: 36;
+}
+
+.star-0, .star-2 {
+    margin-top: 50;
+}
+
+.resultText {
+    margin-bottom: 20;
+}
+
+.label {
+    font-size: 24;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.backButton {
+    width: 260;
+    margin-top: 20;
+}
+
+.image {
+    margin: 20;
+}
