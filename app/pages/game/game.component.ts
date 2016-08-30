@@ -18,6 +18,7 @@ export class GameComponent implements OnInit {
     private selectedAnswer: number = 0;
     answerSelectedByUser: boolean = false;
     countdown: number = 5;
+    showProgress: boolean = false;
 
     constructor(private page: Page, private questionService: QuestionService, private _router: Router) { }
 
@@ -44,13 +45,20 @@ export class GameComponent implements OnInit {
         if(!this.answerSelectedByUser) {
             this.selectedAnswer = answerNumber;
             this.answerSelectedByUser = true;
-            Observable.interval(5000).take(1).subscribe(x => {
-               this.nextQuestion();
+            this.showProgress = true;
+            Observable.interval(1000).take(5).subscribe(x => {
+                this.countdown--;
+                if(this.countdown === 0) {
+                    this.nextQuestion();
+                }
             });
         }
     }
 
     private nextQuestion() {
+
+        this.showProgress = false;
+        this.countdown = 5;
 
         if(this.selectedAnswer == this.actualQuestion.correctAnswer) {
             this.questionService.incrementCorrectAnswers();

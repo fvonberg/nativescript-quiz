@@ -6,4 +6,5 @@
         <TextView row="1" col="0" class="answer" [text]="actualQuestion.answer3" (tap)="setSelectedAnswer(3)" [ngClass]="getAnswerClasses(3)"></TextView>
         <TextView row="1" col="1" class="answer" [text]="actualQuestion.answer4" (tap)="setSelectedAnswer(4)" [ngClass]="getAnswerClasses(4)"></TextView>
     </GridLayout>
+    <Progress [value]="countdown" maxValue="5" [visibility]="showProgress ? 'visible' : 'collapse'"></Progress>
 </StackLayout>
