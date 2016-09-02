@@ -6,3 +6,5 @@ You need:
 - npm
 - NativeScript
 - an Android Emulator
+- tns platform add android
+- tns run android
